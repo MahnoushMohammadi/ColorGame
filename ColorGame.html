@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>JavaScript Guessing Game</title>
+
+</head>
+<body onload="do_game()">
+
+</body>
+<script type="text/javascript">
+var color = [ "Aqua", "Tan","Wheat","Aquamarine", "BlueViolet", "DarkSalmon", "DeepPink", "Green","IndianRed","Indigo", "LightPink", "MidnightBlue","Teal","SandyBrown","Purple","Plum","Peru","SeaShell","MintCream","PaleVioletRed","Red","SeaGreen","Yellow"];
+
+var target;
+var guess_input_text;
+var finished = false;
+var guesses = 0;
+
+function do_game(){
+	var random_number = Math.random()*color.length;
+	var random_number_integer = Math.floor(random_number);
+	target = color[random_number_integer];
+
+	while (!finished){
+		guess_input_text = prompt ("I am thinking of a color" +
+			                       "in the: "+ color.sort() +
+			                       "what is the color?");
+		guesses+=1;
+		finished = check_guess();
+	}
+}
+
+function check_guess(){
+	if (color.indexOf(guess_input_text) > -1){
+		
+		if (guess_input_text > target) {
+			alert("Sorry, you are wrong. Your color is alphabetically higher than mine. Please try again.");
+			return false;
+		}
+		if (guess_input_text < target) {
+			alert("Sorry, you are wrong. Your color is alphabetically lower than mine. Please try again.");
+			return false;
+		}else{
+
+		document.body.style.backgroundColor = target;
+		alert("You got it! The color was" + target +
+			   "\n\n It took you "+ guesses);
+		return true;
+	    }
+	}
+	alert("You have not entered a color from the list.\n\n"+
+			"Please enter a color in the list");
+		return false;
+
+}
+
+</script>
+
+
+</html>
+
+
