@@ -15,13 +15,16 @@
 function show_pattern(){
 	var top_position = 25, left_position = 25;
 	var width = 500, height = 500;
-	var color_list = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+	var color_list = ["Aqua", "Tan","Wheat","Aquamarine", "BlueViolet", "DarkSalmon",
+			  "DeepPink", "Green","IndianRed","Indigo", "LightPink", "MidnightBlue",
+			  "Teal","SandyBrown","Purple","Plum","Peru","SeaShell","MintCream","PaleVioletRed",
+			  "SeaGreen","Yellow"];
 	var the_body = document.getElementById("theBody");
 
-	while(width >50) {
+	while(width >0) {
 
 		var this_div = document.createElement("div");
-		var random_color = Math.random()* 7;
+		var random_color = Math.random()* 23;
 		random_color = Math.floor(random_color);
 		this_div.style.top = top_position +"px";
 		this_div.style.left = left_position +"px";
